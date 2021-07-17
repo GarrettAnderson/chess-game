@@ -1,3 +1,11 @@
+window.onload = function() {
+  if (localStorage.getItem("hasCodeRunBefore") === null {
+    createBoard()
+    localStorage.setItem("hasCodeRunBefore", true)
+  })
+}
+
+
 const board = document.getElementsByClassName('chessboard-container')
 console.log(board)
 
@@ -21,3 +29,11 @@ const blkMonarchs = [
   {rank: 'queen', hex: '&#9819;'},
   {rank: 'king', hex: '&#9818;'}
 ]
+
+function createBoard(){
+  const table = document.querySelector('table')
+  console.log('Its beginning!' + table)
+
+
+
+}
