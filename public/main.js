@@ -1,8 +1,8 @@
 window.onload = function() {
-  if (localStorage.getItem("hasCodeRunBefore") === null {
+  if (localStorage.getItem("hasCodeRunBefore") === null) {
     createBoard()
     localStorage.setItem("hasCodeRunBefore", true)
-  })
+  }
 }
 
 
