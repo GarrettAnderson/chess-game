@@ -31,9 +31,11 @@ const blkMonarchs = [
 ]
 
 function createBoard(){
-  const table = document.querySelector('table')
+  const table = document.querySelector('tbody')
   console.log('Its beginning!' + table)
 
-
+  for (let i = 0; i <= 9; i++) {
+    table.innerHTML = '<tr></tr>'
+  }
 
 }
