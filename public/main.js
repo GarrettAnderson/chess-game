@@ -7,7 +7,7 @@ window.onload = function() {
 
 
 const board = document.getElementsByClassName('chessboard-container')
-// console.log(board)
+console.log(board)
 
 // create variables for the white and black pieces
 // create a function that creates the board
@@ -31,11 +31,14 @@ const blkMonarchs = [
 ]
 
 function createBoard(){
-  const table = document.querySelector('table')
+  const table = document.querySelector('tbody')
   console.log('Its beginning!' + table)
 
-  // for (let i = 0; i <= 9; i++) {
-  //   table.appendChild('<tr>TESTING</tr>')
-  // }
-  // return table
+  // let tableRow = document.createElement('<tr>')
+  for (let i = 0; i <= 9; i++) {
+    // table.appendChild(tableRow)
+    table.insertRow(i)
+    return table
+    
+  }
 }
