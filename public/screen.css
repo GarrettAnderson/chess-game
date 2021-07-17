@@ -12,9 +12,7 @@ body {
 }
 
 table {
-    display: flex;
-    justify-content: center;
-    margin-top: 3rem;
+    margin: 3rem auto;
     border-collapse: collapse;
 }
 
@@ -23,6 +21,11 @@ tbody {
 }
 
 td {
+  border: 1px solid red;
+  padding: 1rem;
+}
+
+th {
   border: 1px solid red;
   padding: 1rem;
 }
