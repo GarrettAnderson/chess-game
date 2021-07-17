@@ -1,5 +1,5 @@
 window.onload = function() {
-  if (localStorage.getItem("hasCodeRunBefore") === null) {
+  if (localStorage.getItem("hasCodeRunBefore") != null) {
     createBoard()
     localStorage.setItem("hasCodeRunBefore", true)
   }
@@ -7,7 +7,7 @@ window.onload = function() {
 
 
 const board = document.getElementsByClassName('chessboard-container')
-console.log(board)
+// console.log(board)
 
 // create variables for the white and black pieces
 // create a function that creates the board
@@ -31,11 +31,11 @@ const blkMonarchs = [
 ]
 
 function createBoard(){
-  const table = document.querySelector('tbody')
+  const table = document.querySelector('table')
   console.log('Its beginning!' + table)
 
-  for (let i = 0; i <= 9; i++) {
-    table.innerHTML = '<tr></tr>'
-  }
-
+  // for (let i = 0; i <= 9; i++) {
+  //   table.appendChild('<tr>TESTING</tr>')
+  // }
+  // return table
 }
