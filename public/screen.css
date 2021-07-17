@@ -11,10 +11,27 @@ body {
   min-height: 100%;
 }
 
+table {
+    display: flex;
+    justify-content: center;
+    margin-top: 3rem;
+    border-collapse: collapse;
+}
+
 tbody {
    border: 1px solid red;
 }
 
 td {
   border: 1px solid red;
+  padding: 1rem;
 }
+
+td:nth-child(1){
+    background:blue;
+    color: white;
+}
+/* td:nth-child(4n+3){
+    background:blue;
+    color: white;
+} */
