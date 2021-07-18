@@ -31,14 +31,15 @@ const blkMonarchs = [
 ]
 
 function createBoard(){
-  const table = document.querySelector('tbody')
+  const table = document.getElementsByClassName('table-body')
+  const row = table.insertRow(0)
   console.log('Its beginning!' + table)
 
   // let tableRow = document.createElement('<tr>')
   for (let i = 0; i <= 9; i++) {
     // table.appendChild(tableRow)
-    table.insertRow(i)
-    return table
-    
+    // row.insertCell(i)
+    // return table
+
   }
 }
