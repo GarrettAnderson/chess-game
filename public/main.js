@@ -1,3 +1,5 @@
+'use-strict'
+
 window.onload = function() {
   if (localStorage.getItem("hasCodeRunBefore") != null) {
     createBoard()
@@ -6,7 +8,7 @@ window.onload = function() {
 }
 
 
-const board = document.getElementsByClassName('chessboard-container')
+const board = document.getElementById('chessboard-container')
 console.log(board)
 
 // create variables for the white and black pieces
@@ -31,14 +33,14 @@ const blkMonarchs = [
 ]
 
 function createBoard(){
-  const table = document.getElementsByClassName('table-body')
-  const row = table.insertRow(0)
+  let table = document.getElementById('tbody')
+  let row = table.insertRow(0)
   console.log('Its beginning!' + table)
 
   // let tableRow = document.createElement('<tr>')
   for (let i = 0; i <= 9; i++) {
     // table.appendChild(tableRow)
-    // row.insertCell(i)
+    row.insertCell(i)
     // return table
 
   }
