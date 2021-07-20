@@ -9,7 +9,9 @@ window.onload = function() {
 
 
 const board = document.getElementById('chessboard-container')
-console.log(board)
+// const newBtn = document.getElementById('new-game-btn')
+const newBtn = document.querySelector('.new-game-btn')
+console.log(board, newBtn)
 
 // create variables for the white and black pieces
 // create a function that creates the board
@@ -32,6 +34,14 @@ const blkMonarchs = [
   {rank: 'king', hex: '&#9818;'}
 ]
 
+
+newBtn.addEventListener('click', newGame)
+//
+// function cleanUp() {
+//   console.log('meow')
+//   newBtn.removeEventListener('click', newGame)
+// }
+
 function createBoard(){
   let table = document.getElementById('tbody')
 
@@ -40,9 +50,15 @@ function createBoard(){
   // let tableRow = document.createElement('<tr>')
 
   for (let i = 0; i < 8; i++) {
-    let row = table.insertRow(i)
+      let row = table.insertRow(i)
       for (let j = 0; j < 8; j++) {
         row.insertCell(j)
       }
     }
+  }
+
+  function newGame() {
+    console.log('testing')
+
+    // return cleanUp
   }
