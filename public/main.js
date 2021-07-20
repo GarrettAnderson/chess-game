@@ -36,6 +36,9 @@ const blkMonarchs = [
 
 
 newBtn.addEventListener('click', newGame)
+
+// you would only want to removeEventListener if
+// you were removing the button programmatically
 //
 // function cleanUp() {
 //   console.log('meow')
@@ -51,11 +54,21 @@ function createBoard(){
 
   for (let i = 0; i < 8; i++) {
       let row = table.insertRow(i)
-      for (let j = 0; j < 8; j++) {
+      let firstCell = row.insertCell(0)
+
+      firstCell.innerHTML = i + 1
+
+      for (let j = 1; j < 9; j++) {
         row.insertCell(j)
       }
-    }
   }
+
+  // const helperNumRow = table.rows[0]
+  // for (let i = 0; i < helperNumRow.cells.length; i++) {
+  //   console.log(i)
+  //   helperNumRow.cells[i].innerHTML = i
+  // }
+}
 
   function newGame() {
     console.log('testing')
