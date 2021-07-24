@@ -77,13 +77,17 @@ function createBoard(){
 }
 
   function newGame() {
-    let char = document.querySelector('.table-body tr:first-child')
+    let chars = document.querySelector('.table-body tr:first-child')
     let pawns = document.querySelector('.table-body tr:nth-child(2)')
     // pawnSqr.innerHTML = 'test'
-    console.log(char)
+    console.log(chars)
 
     for (let index = 1; index < pawns.cells.length; index ++) {
         pawns.cells[index].innerHTML = whitePawn
+    }
+
+    for (let index = 1; index < chars.cells.length; index ++) {
+        chars.cells[index].innerHTML = whiteMonarchs[index]
     }
 
     // return cleanUp
