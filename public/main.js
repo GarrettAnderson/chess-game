@@ -3,9 +3,12 @@
 window.onload = function() {
   if (localStorage.getItem("hasCodeRunBefore") != null) {
     createBoard()
+    newGame()
     localStorage.setItem("hasCodeRunBefore", true)
   }
 }
+
+
 
 
 const board = document.getElementById('chessboard-container')
@@ -37,6 +40,10 @@ const blkMonarchs = [
 
 newBtn.addEventListener('click', newGame)
 
+
+
+
+
 // you would only want to removeEventListener if
 // you were removing the button programmatically
 //
@@ -62,7 +69,6 @@ function createBoard(){
         row.insertCell(j)
       }
   }
-
   // const helperNumRow = table.rows[0]
   // for (let i = 0; i < helperNumRow.cells.length; i++) {
   //   console.log(i)
@@ -71,7 +77,14 @@ function createBoard(){
 }
 
   function newGame() {
-    console.log('testing')
+    let char = document.querySelector('.table-body tr:first-child')
+    let pawns = document.querySelector('.table-body tr:nth-child(2)')
+    // pawnSqr.innerHTML = 'test'
+    console.log(char)
+
+    for (let index = 1; index < pawns.cells.length; index ++) {
+        pawns.cells[index].innerHTML = whitePawn
+    }
 
     // return cleanUp
   }
