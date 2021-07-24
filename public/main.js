@@ -25,7 +25,10 @@ const whiteMonarchs = [
   {rank: 'knight', hex: '&#9816;'},
   {rank: 'bishop', hex: '&#9815;'},
   {rank: 'queen', hex: '&#9813;'},
-  {rank: 'king', hex: '&#9812;'}
+  {rank: 'king', hex: '&#9812;'},
+  {rank: 'bishop', hex: '&#9815;'},
+  {rank: 'knight', hex: '&#9816;'},
+  {rank: 'rook', hex: '&#9814;'}
 ]
 
 const blkPawn = '&#9823;'
@@ -34,7 +37,10 @@ const blkMonarchs = [
   {rank: 'knight', hex: '&#9822;'},
   {rank: 'bishop', hex: '&#9821;'},
   {rank: 'queen', hex: '&#9819;'},
-  {rank: 'king', hex: '&#9818;'}
+  {rank: 'king', hex: '&#9818;'},
+  {rank: 'bishop', hex: '&#9821;'},
+  {rank: 'knight', hex: '&#9822;'},
+  {rank: 'rook', hex: '&#9820;'}
 ]
 
 
@@ -77,18 +83,23 @@ function createBoard(){
 }
 
   function newGame() {
-    let chars = document.querySelector('.table-body tr:first-child')
-    let pawns = document.querySelector('.table-body tr:nth-child(2)')
+    let whtChars = document.querySelector('.table-body tr:first-child')
+    let whtPawns = document.querySelector('.table-body tr:nth-child(2)')
+
+    let blkChars = document.querySelector('.table-body tr:last-child')
+    let blkPawns = document.querySelector('.table-body tr:nth-child(7)')
     // pawnSqr.innerHTML = 'test'
-    console.log(chars)
+    console.log(whtChars)
 
-    for (let index = 1; index < pawns.cells.length; index ++) {
-        pawns.cells[index].innerHTML = whitePawn
+    for (let index = 1; index < whtPawns.cells.length; index ++) {
+        whtPawns.cells[index].innerHTML = whitePawn
+        whtChars.cells[index].innerHTML = whiteMonarchs[index - 1].hex
+
+        blkChars.cells[index].innerHTML = blkMonarchs[index - 1].hex
+        blkPawns.cells[index].innerHTML = blkPawn
     }
 
-    for (let index = 1; index < chars.cells.length; index ++) {
-        chars.cells[index].innerHTML = whiteMonarchs[index]
-    }
+
 
     // return cleanUp
   }
