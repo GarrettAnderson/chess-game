@@ -91,7 +91,7 @@ function createBoard(){
     // pawnSqr.innerHTML = 'test'
     console.log(whtChars)
 
-    for (let index = 1; index < whtPawns.cells.length; index ++) {
+    for (let index = 1; index < 9; index ++) {
         whtPawns.cells[index].innerHTML = whitePawn
         whtChars.cells[index].innerHTML = whiteMonarchs[index - 1].hex
 
