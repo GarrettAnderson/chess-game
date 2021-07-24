@@ -47,9 +47,6 @@ const blkMonarchs = [
 newBtn.addEventListener('click', newGame)
 
 
-
-
-
 // you would only want to removeEventListener if
 // you were removing the button programmatically
 //
@@ -60,10 +57,7 @@ newBtn.addEventListener('click', newGame)
 
 function createBoard(){
   let table = document.getElementById('tbody')
-
-  console.log('Its beginning!' + table)
-
-  // let tableRow = document.createElement('<tr>')
+  // console.log('Its beginning!' + table)
 
   for (let i = 0; i < 8; i++) {
       let row = table.insertRow(i)
@@ -74,13 +68,8 @@ function createBoard(){
       for (let j = 1; j < 9; j++) {
         row.insertCell(j)
       }
+    }
   }
-  // const helperNumRow = table.rows[0]
-  // for (let i = 0; i < helperNumRow.cells.length; i++) {
-  //   console.log(i)
-  //   helperNumRow.cells[i].innerHTML = i
-  // }
-}
 
   function newGame() {
     let whtChars = document.querySelector('.table-body tr:first-child')
@@ -89,7 +78,7 @@ function createBoard(){
     let blkChars = document.querySelector('.table-body tr:last-child')
     let blkPawns = document.querySelector('.table-body tr:nth-child(7)')
     // pawnSqr.innerHTML = 'test'
-    console.log(whtChars)
+    // console.log(whtChars)
 
     for (let index = 1; index < 9; index ++) {
         whtPawns.cells[index].innerHTML = whitePawn
@@ -98,8 +87,5 @@ function createBoard(){
         blkChars.cells[index].innerHTML = blkMonarchs[index - 1].hex
         blkPawns.cells[index].innerHTML = blkPawn
     }
-
-
-
     // return cleanUp
   }
