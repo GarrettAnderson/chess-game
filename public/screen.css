@@ -11,6 +11,13 @@ body {
   min-height: 100%;
 }
 
+header {
+    height: 3rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
 table {
     margin: 3rem auto;
     border-collapse: collapse;
@@ -62,6 +69,7 @@ tr:nth-child(odd) td:nth-child(even), tr:nth-child(even) td:nth-child(odd) {
 img {
   width: 2rem;
   position: absolute;
+  filter: drop-shadow(2px 4px 6px black);
 }
 
 .files-label tr td:first-child div {
