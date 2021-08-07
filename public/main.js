@@ -23,14 +23,14 @@ console.log(board, newBtn)
 // Create representation of the chess board
 
 let boardRep = [
-  ["R", "K", "B", "Q", "K", "B", "K", "R"],
-  ["P", "P", "P", "P", "P", "P", "P", "P"],
-  ["E", "E", "E", "E", "E", "E", "E", "E"],
-  ["E", "E", "E", "E", "E", "E", "E", "E"],
-  ["E", "E", "E", "E", "E", "E", "E", "E"],
-  ["E", "E", "E", "E", "E", "E", "E", "E"],
-  ["P", "P", "P", "P", "P", "P", "P", "P"],
-  ["R", "K", "B", "Q", "K", "B", "K", "R"]
+  "R", "K", "B", "Q", "K", "B", "K", "R",
+  "P", "P", "P", "P", "P", "P", "P", "P",
+  "E", "E", "E", "E", "E", "E", "E", "E",
+  "E", "E", "E", "E", "E", "E", "E", "E",
+  "E", "E", "E", "E", "E", "E", "E", "E",
+  "E", "E", "E", "E", "E", "E", "E", "E",
+  "P", "P", "P", "P", "P", "P", "P", "P",
+  "R", "K", "B", "Q", "K", "B", "K", "R"
 ]
 
 
@@ -61,9 +61,26 @@ const blkMonarchs = [
   {rank: 'rook', hex: '&#9820;'}
 ]
 
+// Set state to indicate if a piece is selected
+let state = false
+let currentPiece
+let currentCell
+
 
 newBtn.addEventListener('click', newGame)
 
+function getCell(that) {
+  if (!state) { // if the state is false - when no piece is selected
+    state = true; // a piece has been selected
+    currentPiece = that.innerHTML // get the current piece selected
+    currentCell = that; // get the current cell
+  } else {
+    // else, you are moving a piece
+    that.innerHTML = currentPiece // Set the selected space to the piece that was grabbed
+    currentCell.innerHTML = "" // remove the piece from its old location
+    state = false // piece has been set so set state back to false
+  }
+}
 
 // you would only want to removeEventListener if
 // you were removing the button programmatically
