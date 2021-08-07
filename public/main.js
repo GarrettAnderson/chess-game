@@ -1,5 +1,6 @@
 'use-strict'
 
+// CREATE BOARD WHEN VIEWPORT LOADS AND RELOADS
 window.onload = function() {
   if (localStorage.getItem("hasCodeRunBefore") != null) {
     createBoard()
@@ -8,6 +9,9 @@ window.onload = function() {
   }
 }
 
+// REFERENCE tbody AND SIZE IT RELATIVE TO THE viewport
+
+// document.querySelector('.tbody').style.height = ${window.size.height * 0.1}
 
 
 
