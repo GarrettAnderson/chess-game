@@ -19,6 +19,8 @@ const board = document.getElementById('chessboard-container')
 // const newBtn = document.getElementById('new-game-btn')
 const newBtn = document.querySelector('.new-game-btn')
 console.log(board, newBtn)
+const cell = document.querySelector('td')
+console.log(cell)
 
 // Create representation of the chess board
 
@@ -68,6 +70,11 @@ let currentCell
 
 
 newBtn.addEventListener('click', newGame)
+cell.addEventListener('click', movePiece)
+
+function movePiece() {
+  console.log('cell clicked!')
+}
 
 function getCell(that) {
   if (!state) { // if the state is false - when no piece is selected
