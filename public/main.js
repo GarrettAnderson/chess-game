@@ -20,6 +20,20 @@ const board = document.getElementById('chessboard-container')
 const newBtn = document.querySelector('.new-game-btn')
 console.log(board, newBtn)
 
+// Create representation of the chess board
+
+let boardRep = [
+  ["R", "K", "B", "Q", "K", "B", "K", "R"],
+  ["P", "P", "P", "P", "P", "P", "P", "P"],
+  ["E", "E", "E", "E", "E", "E", "E", "E"],
+  ["E", "E", "E", "E", "E", "E", "E", "E"],
+  ["E", "E", "E", "E", "E", "E", "E", "E"],
+  ["E", "E", "E", "E", "E", "E", "E", "E"],
+  ["P", "P", "P", "P", "P", "P", "P", "P"],
+  ["R", "K", "B", "Q", "K", "B", "K", "R"]
+]
+
+
 // create variables for the white and black pieces
 // create a function that creates the board
 
