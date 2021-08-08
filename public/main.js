@@ -70,10 +70,10 @@ let currentCell
 
 
 newBtn.addEventListener('click', newGame)
-cell.addEventListener('click', movePiece)
+cell.addEventListener('click', (e) => console.log('test', e))
 
-function movePiece() {
-  console.log('cell clicked!')
+function movePiece(e) {
+  console.log('cell clicked!', e)
 }
 
 function getCell(that) {
