@@ -9,18 +9,6 @@ window.onload = function() {
   }
 }
 
-// REFERENCE tbody AND SIZE IT RELATIVE TO THE viewport
-
-// document.querySelector('.tbody').style.height = ${window.size.height * 0.1}
-
-
-
-const board = document.getElementById('chessboard-container')
-// const newBtn = document.getElementById('new-game-btn')
-const newBtn = document.querySelector('.new-game-btn')
-console.log(board, newBtn)
-const cell = document.querySelector('td')
-console.log(cell)
 
 // Create representation of the chess board
 
@@ -69,14 +57,32 @@ let currentPiece
 let currentCell
 
 
+// REFERENCE tbody AND SIZE IT RELATIVE TO THE viewport
+
+// document.querySelector('.tbody').style.height = ${window.size.height * 0.1}
+
+
+
+const board = document.getElementById('chessboard-container')
+// const newBtn = document.getElementById('new-game-btn')
+const newBtn = document.querySelector('.new-game-btn')
+console.log(board, newBtn)
+const cells = document.querySelectorAll('td')
+console.log(cells)
+for (let i = 0; i < cells.length; i++) {
+  cells[i].addEventListener('click', getCell(this))
+}
+
+
 newBtn.addEventListener('click', newGame)
-cell.addEventListener('click', (e) => console.log('test', e))
+
 
 function movePiece(e) {
   console.log('cell clicked!', e)
 }
 
 function getCell(that) {
+  console.log('getCell function called')
   if (!state) { // if the state is false - when no piece is selected
     state = true; // a piece has been selected
     currentPiece = that.innerHTML // get the current piece selected
