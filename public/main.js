@@ -56,23 +56,17 @@ let state = false
 let currentPiece
 let currentCell
 
-
-// REFERENCE tbody AND SIZE IT RELATIVE TO THE viewport
-
-// document.querySelector('.tbody').style.height = ${window.size.height * 0.1}
-
-
-
 const board = document.getElementById('chessboard-container')
 // const newBtn = document.getElementById('new-game-btn')
 const newBtn = document.querySelector('.new-game-btn')
 console.log(board, newBtn)
 const cells = document.querySelectorAll('td')
 console.log(cells)
-for (let i = 0; i < cells.length; i++) {
-  cells[i].addEventListener('click', getCell(this))
-}
 
+
+// REFERENCE tbody AND SIZE IT RELATIVE TO THE viewport
+
+// document.querySelector('.tbody').style.height = ${window.size.height * 0.1}
 
 newBtn.addEventListener('click', newGame)
 
@@ -137,3 +131,20 @@ function createBoard(){
     }
     // return cleanUp
   }
+
+  for (let i = 0; i < cells.length; i++) {
+    // Below is a callback function. second argument to add event listener is a callback.
+    // Returning
+    console.log(cells[i])
+    // cells[i].addEventListener('click', (e) => getCell(this))
+  }
+
+  // function Meow(meow) {
+  //   meow()
+  //   console.log(2)
+  //   meow()
+  // }
+  //
+  // Meow(() => {
+  //   console.log('1')
+  // })
