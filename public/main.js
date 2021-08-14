@@ -61,15 +61,18 @@ const board = document.getElementById('chessboard-container')
 const newBtn = document.querySelector('.new-game-btn')
 console.log(board, newBtn)
 const cells = document.querySelectorAll('td')
-console.log(cells)
 
-
+// setting global variable for cell so that newGame function can provide ability to isolate cells with pieces
+const cell = ''
 // REFERENCE tbody AND SIZE IT RELATIVE TO THE viewport
 
 // document.querySelector('.tbody').style.height = ${window.size.height * 0.1}
 
 newBtn.addEventListener('click', newGame)
 
+
+// add event listener for when user clicks on a piece to movePiece
+// clickPiece()
 
 function movePiece(e) {
   console.log('cell clicked!', e)
@@ -129,15 +132,23 @@ function createBoard(){
         blkChars.cells[index].innerHTML = blkMonarchs[index - 1].hex
         blkPawns.cells[index].innerHTML = blkPawn
     }
-    // return cleanUp
+
+    // print all the cells to console
+    console.log(cells)
+    for (let i = 0; i < cells.length; i++) {
+      console.log(cells[i])
+    }
+
   }
 
-  for (let i = 0; i < cells.length; i++) {
-    // Below is a callback function. second argument to add event listener is a callback.
-    // Returning
-    console.log(cells[i])
-    // cells[i].addEventListener('click', (e) => getCell(this))
-  }
+  // function clickPiece() {
+  //   for (let i = 0; i < cells.length; i++) {
+  //     // Below is a callback function. second argument to add event listener is a callback.
+  //     // Returning
+  //     console.log(cells[i])
+  //     // cells[i].addEventListener('click', (e) => getCell(this))
+  //   }
+  // }
 
   // function Meow(meow) {
   //   meow()
