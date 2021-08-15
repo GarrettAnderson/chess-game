@@ -131,14 +131,14 @@ function createBoard(){
 
         blkChars.cells[index].innerHTML = blkMonarchs[index - 1].hex
         blkPawns.cells[index].innerHTML = blkPawn
-    }
 
-    // print all the cells to console
-    console.log(cells)
-    for (let i = 0; i < cells.length; i++) {
-      console.log(cells[i])
-    }
+        whtPawns.cells[index].addEventListener('click', movePiece)
+        whtChars.cells[index].addEventListener('click', movePiece)
 
+        blkChars.cells[index].addEventListener('click', movePiece)
+        blkPawns.cells[index].addEventListener('click', movePiece)
+
+    }
   }
 
   // function clickPiece() {
