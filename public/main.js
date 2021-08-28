@@ -82,17 +82,18 @@ function movePiece(e) {
 }
 
 function getCell(that) {
-  console.log(that)
+  // console.log(that)
   if (!state) { // if the state is false - when no piece is selected
     state = true; // a piece has been selected
-    currentPiece = that.innerHTML // get the current piece selected
-    currentCell = that; // get the current cell
+    currentPiece = that // get the current piece selected
+    // currentCell = that; // get the current cell
     console.log(currentPiece)
-    console.log(currentCell)
+    // console.log(currentCell)
   } else {
     // else, you are moving a piece
     that.innerHTML = currentPiece // Set the selected space to the piece that was grabbed
-    currentCell.innerHTML = "" // remove the piece from its old location
+    // currentCell.innerHTML = "" // remove the piece from its old location
+    currentPiece.innerHTML = ""
     state = false // piece has been set so set state back to false
   }
 }
