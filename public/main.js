@@ -82,12 +82,12 @@ function movePiece(e) {
 }
 
 function getCell(that) {
-  console.log(that)
+  // console.log(that)
   if (!state) { // if the state is false - when no piece is selected
     state = true; // a piece has been selected
     currentPiece = that.innerHTML // get the current piece selected
     currentCell = that; // get the current cell
-    console.log(currentPiece)
+    // console.log(currentPiece)
     console.log(currentCell)
   } else {
     // else, you are moving a piece
@@ -164,3 +164,52 @@ function createBoard(){
   // Meow(() => {
   //   console.log('1')
   // })
+
+
+
+
+  // GOT THIS OFF STACK OVERFLOW FOR REFERENCE
+
+/*
+  setUp();
+//attempts with making things move
+var clickedon = false;
+var save_x = 0;
+var save_y = 0;
+var piece = 0;
+var _x = 0;
+var _y = 0;
+
+//gets cell index
+function indexCell(x)
+{
+//alert("Cell index is: " + x.cellIndex);
+_x = x.cellIndex;
+if(clickedon == false)
+{
+if(pieces[_x][_y] != " ")
+{
+    figura = pieces[_x][_y];
+    save_x = _x;
+    save_y = _y;
+    clickedon = true;
+    alert(piece)
+}
+}
+else
+{
+if(pieces[_x][_y] == " ")
+{
+    pieces[save_x][save_y] = " ";
+    pieces[_x][_y] = piece;
+    setUp();
+    clickedon = false
+}
+}
+}
+//grabs row index
+function indexRow(y){
+//alert("Row index is: " + x.rowIndex);
+_y = y.rowIndex;
+}
+*/
