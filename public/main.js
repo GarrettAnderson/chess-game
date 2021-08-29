@@ -172,12 +172,11 @@ function createBoard(){
         console.log(allCells[j])
         remainingRows.push(allCells[j])
         console.log(remainingRows)
-        // for (let k = 0; k < 4; k++) {
-        //   remainingCells.push(remainingRows[k])
-        // }
-        // console.log(remainingCells)
     }
-    // console.log(remainingCells)
+
+    for (let k = 0; k < 4; k++) {
+      console.log(remainingRows[k])
+    }
   }
 
 
