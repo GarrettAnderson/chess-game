@@ -142,6 +142,7 @@ function createBoard(){
     let blkPawns = document.querySelector('.table-body tr:nth-child(7)')
 
     let allCells = [...document.querySelectorAll('.table-body tr')]
+    let remainingRows = []
     let remainingCells = []
     console.log(allCells)
 
@@ -169,13 +170,14 @@ function createBoard(){
         // allCells[index].addEventListener('click', getCell)
 
         console.log(allCells[j])
-        remainingCells.push(allCells[j])
-
-        for (let k = 0; k < 4; k++) {
-          console.log(remainingCells[j])
-        }
+        remainingRows.push(allCells[j])
+        console.log(remainingRows)
+        // for (let k = 0; k < 4; k++) {
+        //   remainingCells.push(remainingRows[k])
+        // }
+        // console.log(remainingCells)
     }
-    console.log(remainingCells)
+    // console.log(remainingCells)
   }
 
 
