@@ -87,6 +87,7 @@ function movePiece(e) {
 
 function getCell(x) {
   console.log(this) // 'this' will access the chess piece and the <td />
+  console.log(x)
   if (!state) { // if the state is false - when no piece is selected
     state = true; // a piece has been selected
     currentPiece = this // get the current piece selected
@@ -99,6 +100,7 @@ function getCell(x) {
     currentCell.innerHTML = "" // remove the piece from its old location
     state = false // piece has been set so set state back to false
   }
+  return this.removeEventListener('click', x)
 }
 
 // you would only want to removeEventListener if
