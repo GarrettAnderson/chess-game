@@ -102,7 +102,8 @@ function getCell(e) {
       console.log(currentCell)
       console.log(boardRep[x][y])
     }
-  } else {
+  } else if (boardRep[x][y] == " ") {
+
     // else, you are moving a piece
     x.innerHTML = currentPiece // Set the selected space to the piece that was grabbed
     currentCell.innerHTML = "" // remove the piece from its old location
