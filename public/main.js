@@ -88,19 +88,26 @@ function movePiece(e) {
 function getCell(x) {
   console.log(this) // 'this' will access the chess piece and the <td />
   console.log(x)
-  if (!state) { // if the state is false - when no piece is selected
-    state = true; // a piece has been selected
-    currentPiece = this // get the current piece selected
-    currentCell = this.cellIndex; // get the current cell
-    // console.log(currentPiece)
-    console.log(currentCell)
-  } else {
-    // else, you are moving a piece
-    x.innerHTML = currentPiece // Set the selected space to the piece that was grabbed
-    currentCell.innerHTML = "" // remove the piece from its old location
-    state = false // piece has been set so set state back to false
-  }
-  return this.removeEventListener('click', x)
+
+  // if (!state) { // if the state is false - when no piece is selected
+  //   if (boardRep[x][y] != " ") {
+  //     console.log(boardRep[x][y])
+  //     save_x = x
+  //     save_y = y
+  //     state = true; // a piece has been selected
+      currentPiece = this // get the current piece selected
+      currentCell = this.cellIndex; // get the current cell
+      console.log(currentPiece)
+      console.log(currentCell)
+      console.log(boardRep[x][y])
+
+  //   }
+  // } else {
+  //   // else, you are moving a piece
+  //   x.innerHTML = currentPiece // Set the selected space to the piece that was grabbed
+  //   currentCell.innerHTML = "" // remove the piece from its old location
+  //   state = false // piece has been set so set state back to false
+  // }
 }
 
 // you would only want to removeEventListener if
