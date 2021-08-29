@@ -85,17 +85,17 @@ function movePiece(e) {
 
 }
 
-function getCell(that) {
-  // console.log(that)
+function getCell(x) {
+  console.log(this) // 'this' will access the chess piece and the <td />
   if (!state) { // if the state is false - when no piece is selected
     state = true; // a piece has been selected
-    currentPiece = that.innerHTML // get the current piece selected
-    currentCell = that; // get the current cell
+    currentPiece = x.innerHTML // get the current piece selected
+    currentCell = x; // get the current cell
     // console.log(currentPiece)
     console.log(currentCell)
   } else {
     // else, you are moving a piece
-    that.innerHTML = currentPiece // Set the selected space to the piece that was grabbed
+    x.innerHTML = currentPiece // Set the selected space to the piece that was grabbed
     currentCell.innerHTML = "" // remove the piece from its old location
     state = false // piece has been set so set state back to false
   }
@@ -141,7 +141,7 @@ function createBoard(){
         blkChars.cells[index].innerHTML = blkMonarchs[index - 1].hex
         blkPawns.cells[index].innerHTML = blkPawn
 
-        whtPawns.cells[index].addEventListener('click', movePiece)
+        whtPawns.cells[index].addEventListener('click', getCell)
         whtChars.cells[index].addEventListener('click', movePiece)
 
         blkChars.cells[index].addEventListener('click', movePiece)
@@ -149,6 +149,9 @@ function createBoard(){
 
     }
   }
+
+
+  // CALLBACK FUNCTION TO GET THE CELL INDEX
 
   // function clickPiece() {
   //   for (let i = 0; i < cells.length; i++) {
