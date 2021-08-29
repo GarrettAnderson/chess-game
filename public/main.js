@@ -55,6 +55,10 @@ const blkMonarchs = [
 let state = false
 let currentPiece
 let currentCell
+let save_x = 0
+let save_y = 0
+let x = 0
+let y = 0
 
 const board = document.getElementById('chessboard-container')
 // const newBtn = document.getElementById('new-game-btn')
@@ -180,22 +184,21 @@ var piece = 0;
 var _x = 0;
 var _y = 0;
 
-//gets cell index
-function indexCell(x)
-{
+//GET CELL INDEX
+function indexCell(x) {
+
 //alert("Cell index is: " + x.cellIndex);
 _x = x.cellIndex;
-if(clickedon == false)
-{
-if(pieces[_x][_y] != " ")
-{
-    figura = pieces[_x][_y];
-    save_x = _x;
-    save_y = _y;
-    clickedon = true;
-    alert(piece)
-}
-}
+
+  if(clickedon == false) {
+    if(pieces[_x][_y] != " ") {
+      figura = pieces[_x][_y];
+      save_x = _x;
+      save_y = _y;
+      clickedon = true;
+      alert(piece)
+    }
+  }
 else
 {
 if(pieces[_x][_y] == " ")
