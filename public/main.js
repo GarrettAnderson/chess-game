@@ -146,7 +146,6 @@ function createBoard(){
 
         blkChars.cells[index].addEventListener('click', movePiece)
         blkPawns.cells[index].addEventListener('click', movePiece)
-
     }
   }
 
