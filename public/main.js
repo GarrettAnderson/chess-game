@@ -78,12 +78,10 @@ newBtn.addEventListener('click', newGame)
 // add event listener for when user clicks on a piece to movePiece
 // clickPiece()
 
-function movePiece(e) {
-  console.log('cell clicked!', e)
-  getCell(e)
-
-
-}
+// function movePiece(e) {
+//   console.log('cell clicked!', e)
+//   getCell(e)
+// }
 
 function getCell(e) {
   console.log(this) // 'this' will access the chess piece and the <td />
@@ -103,10 +101,10 @@ function getCell(e) {
       console.log(boardRep[x][y])
     }
   } else if (boardRep[x][y] == " ") {
-
+    console.log('else statement triggered')
     // else, you are moving a piece
     x.innerHTML = currentPiece // Set the selected space to the piece that was grabbed
-    currentCell.innerHTML = "" // remove the piece from its old location
+    currentCell.innerHTML = " " // remove the piece from its old location
     state = false // piece has been set so set state back to false
   }
 }
@@ -133,6 +131,7 @@ function createBoard(){
         row.insertCell(j)
       }
     }
+    console.log(table)
   }
 
   function newGame() {
@@ -154,8 +153,8 @@ function createBoard(){
         whtPawns.cells[index].addEventListener('click', getCell)
         whtChars.cells[index].addEventListener('click', getCell)
 
-        blkChars.cells[index].addEventListener('click', movePiece)
-        blkPawns.cells[index].addEventListener('click', movePiece)
+        blkChars.cells[index].addEventListener('click', getCell)
+        blkPawns.cells[index].addEventListener('click', getCell)
     }
   }
 
