@@ -158,7 +158,7 @@ function createBoard(){
   //     // Below is a callback function. second argument to add event listener is a callback.
   //     // Returning
   //     console.log(cells[i])
-  //     // cells[i].addEventListener('click', (e) => getCell(this))
+  //     cells[i].addEventListener('click', (e) => getCell(this))
   //   }
   // }
 
