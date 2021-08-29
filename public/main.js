@@ -85,9 +85,11 @@ function movePiece(e) {
 
 }
 
-function getCell(that) {
+function getCell(e) {
   console.log(this) // 'this' will access the chess piece and the <td />
   console.log(x)
+  console.log(e)
+
 
   // if (!state) { // if the state is false - when no piece is selected
   //   if (boardRep[x][y] != " ") {
