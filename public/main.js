@@ -89,8 +89,8 @@ function getCell(x) {
   console.log(this) // 'this' will access the chess piece and the <td />
   if (!state) { // if the state is false - when no piece is selected
     state = true; // a piece has been selected
-    currentPiece = x.innerHTML // get the current piece selected
-    currentCell = x; // get the current cell
+    currentPiece = this // get the current piece selected
+    currentCell = this.cellIndex; // get the current cell
     // console.log(currentPiece)
     console.log(currentCell)
   } else {
