@@ -175,7 +175,7 @@ function createBoard(){
     }
 
     for (let k = 0; k < 4; k++) {
-      console.log(remainingRows[k].cells)
+      console.log([...remainingRows[k].cells])
     }
   }
 
