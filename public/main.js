@@ -140,21 +140,27 @@ function createBoard(){
 
     let blkChars = document.querySelector('.table-body tr:last-child')
     let blkPawns = document.querySelector('.table-body tr:nth-child(7)')
+
+    let allCells = document.querySelectorAll('.table-body tr td')
+    console.log(allCells)
+
     // pawnSqr.innerHTML = 'test'
     // console.log(whtChars)
 
     for (let index = 1; index < 9; index ++) {
-        whtPawns.cells[index].innerHTML = whitePawn
-        whtChars.cells[index].innerHTML = whiteMonarchs[index - 1].hex
+        // whtPawns.cells[index].innerHTML = whitePawn
+        // whtChars.cells[index].innerHTML = whiteMonarchs[index - 1].hex
+        //
+        // blkChars.cells[index].innerHTML = blkMonarchs[index - 1].hex
+        // blkPawns.cells[index].innerHTML = blkPawn
+        //
+        // whtPawns.cells[index].addEventListener('click', getCell)
+        // whtChars.cells[index].addEventListener('click', getCell)
+        //
+        // blkChars.cells[index].addEventListener('click', getCell)
+        // blkPawns.cells[index].addEventListener('click', getCell)
 
-        blkChars.cells[index].innerHTML = blkMonarchs[index - 1].hex
-        blkPawns.cells[index].innerHTML = blkPawn
-
-        whtPawns.cells[index].addEventListener('click', getCell)
-        whtChars.cells[index].addEventListener('click', getCell)
-
-        blkChars.cells[index].addEventListener('click', getCell)
-        blkPawns.cells[index].addEventListener('click', getCell)
+        allCells[index].addEventListener('click', getCell)
     }
   }
 
