@@ -142,7 +142,7 @@ function createBoard(){
         blkPawns.cells[index].innerHTML = blkPawn
 
         whtPawns.cells[index].addEventListener('click', getCell)
-        whtChars.cells[index].addEventListener('click', movePiece)
+        whtChars.cells[index].addEventListener('click', getCell)
 
         blkChars.cells[index].addEventListener('click', movePiece)
         blkPawns.cells[index].addEventListener('click', movePiece)
