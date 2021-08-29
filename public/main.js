@@ -85,7 +85,7 @@ function movePiece(e) {
 
 }
 
-function getCell(x) {
+function getCell(that) {
   console.log(this) // 'this' will access the chess piece and the <td />
   console.log(x)
 
