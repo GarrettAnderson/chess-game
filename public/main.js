@@ -142,6 +142,7 @@ function createBoard(){
     let blkPawns = document.querySelector('.table-body tr:nth-child(7)')
 
     let allCells = [...document.querySelectorAll('.table-body tr')]
+    // let rowCells = []
     let remainingRows = []
     let remainingCells = []
     console.log(allCells)
@@ -152,30 +153,31 @@ function createBoard(){
     // pawnSqr.innerHTML = 'test'
     // console.log(whtChars)
 
-      for (let i = 1; i < allCells.length; i ++) {
-            whtPawns.cells[i].innerHTML = whitePawn
-            whtChars.cells[i].innerHTML = whiteMonarchs[i - 1].hex
+    for (let i = 1, row; i < allCells.length + 1; i ++) {
+           whtPawns.cells[i].innerHTML = whitePawn
+           whtChars.cells[i].innerHTML = whiteMonarchs[i - 1].hex
 
-            blkChars.cells[i].innerHTML = blkMonarchs[i - 1].hex
-            blkPawns.cells[i].innerHTML = blkPawn
+           blkChars.cells[i].innerHTML = blkMonarchs[i - 1].hex
+           blkPawns.cells[i].innerHTML = blkPawn
 
-            whtPawns.cells[i].addEventListener('click', getCell)
-            whtChars.cells[i].addEventListener('click', getCell)
+           whtPawns.cells[i].addEventListener('click', getCell)
+           whtChars.cells[i].addEventListener('click', getCell)
 
-            blkChars.cells[i].addEventListener('click', getCell)
-            blkPawns.cells[i].addEventListener('click', getCell)
+           blkChars.cells[i].addEventListener('click', getCell)
+           blkPawns.cells[i].addEventListener('click', getCell)
 
-            console.log(allCells[i])
-            // For each row of cells, print to console each cell and its contents
+           // allCells[index].addEventListener('click', getCell)
 
-            for (let j = 1; j < allCells[i].length; j++) {
-                // allCells[index].addEventListener('click', getCell)
-                // console.log(allCells[j])
-                remainingRows.push(allCells[j])
-                // console.log(remainingRows)
-              }
-        }
-      }
+           for (let j = 2, col; j < 6; j++) {
+
+               console.log(allCells[j])
+               remainingRows = allCells[j]
+               // remainingRows.push(allCells[j])
+               console.log(remainingRows)
+           }
+
+       }
+    }
 
 
 
