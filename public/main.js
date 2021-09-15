@@ -152,32 +152,48 @@ function createBoard(){
     // pawnSqr.innerHTML = 'test'
     // console.log(whtChars)
 
-    for (let index = 1; index < 9; index ++) {
-        whtPawns.cells[index].innerHTML = whitePawn
-        whtChars.cells[index].innerHTML = whiteMonarchs[index - 1].hex
+      for (let i = 1; i < allCells.length; i ++) {
+            whtPawns.cells[i].innerHTML = whitePawn
+            whtChars.cells[i].innerHTML = whiteMonarchs[i - 1].hex
 
-        blkChars.cells[index].innerHTML = blkMonarchs[index - 1].hex
-        blkPawns.cells[index].innerHTML = blkPawn
+            blkChars.cells[i].innerHTML = blkMonarchs[i - 1].hex
+            blkPawns.cells[i].innerHTML = blkPawn
 
-        whtPawns.cells[index].addEventListener('click', getCell)
-        whtChars.cells[index].addEventListener('click', getCell)
+            whtPawns.cells[i].addEventListener('click', getCell)
+            whtChars.cells[i].addEventListener('click', getCell)
 
-        blkChars.cells[index].addEventListener('click', getCell)
-        blkPawns.cells[index].addEventListener('click', getCell)
-    }
+            blkChars.cells[i].addEventListener('click', getCell)
+            blkPawns.cells[i].addEventListener('click', getCell)
 
-    for (let j = 2; j < 6; j++) {
-        // allCells[index].addEventListener('click', getCell)
+            console.log(allCells[i])
+            // For each row of cells, print to console each cell and its contents
 
-        console.log(allCells[j])
-        remainingRows.push(allCells[j])
-        console.log(remainingRows)
-    }
+            for (let j = 1; j < allCells[i].length; j++) {
+                // allCells[index].addEventListener('click', getCell)
+                // console.log(allCells[j])
+                remainingRows.push(allCells[j])
+                // console.log(remainingRows)
+              }
+        }
+      }
 
-    for (let k = 0; k < 4; k++) {
-      console.log([...remainingRows[k].cells])
-    }
-  }
+
+
+
+    // for (let j = 2; j < 6; j++) {
+    //     // allCells[index].addEventListener('click', getCell)
+    //
+    //     console.log(allCells[j])
+    //     remainingRows.push(allCells[j])
+    //     console.log(remainingRows)
+    //
+    //
+    // }
+
+    // for (let k = 0; k < 4; k++) {
+    //   console.log([...remainingRows[k].cells])
+    // }
+
 
 
   // CALLBACK FUNCTION TO GET THE CELL INDEX
