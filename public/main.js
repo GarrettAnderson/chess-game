@@ -83,6 +83,7 @@ newBtn.addEventListener('click', newGame)
 //   getCell(e)
 // }
 
+
 function getCell(e) {
   console.log(this) // 'this' will access the chess piece and the <td />
   console.log(x)
@@ -108,6 +109,7 @@ function getCell(e) {
     state = false // piece has been set so set state back to false
   }
 }
+
 
 // you would only want to removeEventListener if
 // you were removing the button programmatically
@@ -160,21 +162,21 @@ function createBoard(){
            blkChars.cells[i].innerHTML = blkMonarchs[i - 1].hex
            blkPawns.cells[i].innerHTML = blkPawn
 
-           whtPawns.cells[i].addEventListener('click', getCell)
-           whtChars.cells[i].addEventListener('click', getCell)
-
-           blkChars.cells[i].addEventListener('click', getCell)
-           blkPawns.cells[i].addEventListener('click', getCell)
+           // whtPawns.cells[i].addEventListener('click', getCell)
+           // whtChars.cells[i].addEventListener('click', getCell)
+           //
+           // blkChars.cells[i].addEventListener('click', getCell)
+           // blkPawns.cells[i].addEventListener('click', getCell)
 
            // allCells[index].addEventListener('click', getCell)
 
-           for (let j = 2, col; j < 6; j++) {
-
-               console.log(allCells[j])
-               remainingRows = allCells[j]
-               // remainingRows.push(allCells[j])
-               console.log(remainingRows)
-           }
+           // for (let j = 2, col; j < 6; j++) {
+           //
+           //     console.log(allCells[j])
+           //     remainingRows = allCells[j]
+           //     // remainingRows.push(allCells[j])
+           //     console.log(remainingRows)
+           // }
 
        }
     }
@@ -233,13 +235,10 @@ var save_y = 0;
 var piece = 0;
 var _x = 0;
 var _y = 0;
-
 //GET CELL INDEX
 function indexCell(x) {
-
 //alert("Cell index is: " + x.cellIndex);
 _x = x.cellIndex;
-
   if(clickedon == false) {
     if(pieces[_x][_y] != " ") {
       figura = pieces[_x][_y];
