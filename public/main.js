@@ -160,6 +160,7 @@ function createBoard(){
     for (let i = 1, row; i < allCells.length + 1; i ++) {
 
           let cellsPerRow = Array.from(allCells[i].children)
+          console.log(cellsPerRow)
 
            whtPawns.cells[i].innerHTML = whitePawn
            whtChars.cells[i].innerHTML = whiteMonarchs[i - 1].hex
@@ -183,11 +184,9 @@ function createBoard(){
            //     console.log(remainingRows)
            // }
 
-           console.log(cellsPerRow)
-
-             for(let j = 0; j < cellsPerRow.length; j++) {
-               console.log(cellsPerRow[j])
-             }
+           // for(let j = 0; j < cellsPerRow.length; j++) {
+           //   console.log(cellsPerRow[j])
+           // }
 
        }
     }
