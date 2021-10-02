@@ -164,6 +164,10 @@ function createBoard(){
            blkChars.cells[i].innerHTML = blkMonarchs[i - 1].hex
            blkPawns.cells[i].innerHTML = blkPawn
 
+           // for (let j = 1, rowCell; j < allCells[i].length; j++) {
+             console.log(Array.from(allCells[i].children))
+           // }
+
            whtPawns.cells[i].addEventListener('click', getCell)
            whtChars.cells[i].addEventListener('click', getCell)
 
