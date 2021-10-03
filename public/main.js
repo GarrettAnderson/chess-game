@@ -159,7 +159,7 @@ function createBoard(){
 
     for (let i = 1, row; i < allCells.length + 1; i ++) {
 
-          let cellsPerRow = Array.from(allCells[i].children)
+          let cellsPerRow = Array.from(allCells[i - 1].children)
           console.log(cellsPerRow)
 
            whtPawns.cells[i].innerHTML = whitePawn
