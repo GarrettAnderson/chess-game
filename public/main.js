@@ -86,31 +86,28 @@ newBtn.addEventListener('click', newGame)
 
 function getCell(e) {
   console.log(this) // 'this' will access the chess piece and the <td />
-  console.log(x)
+  // console.log(x)
   console.log(e)
 
-/*
-  if (!state) { // if the state is false - when no piece is selected
+//  if (!state) { // if the state is false - when no piece is selected
     if (boardRep[x][y] != " ") {
-      save_x = x
-      save_y = y
-      state = true; // a piece has been selected
-      currentPiece = this // get the current piece selected
-      currentCell = this.cellIndex; // get the current cell
-      console.log(currentPiece)
-      console.log(currentCell)
-      console.log(boardRep[x][y])
+        save_x = x
+        save_y = y
+        state = true; // a piece has been selected
+        currentPiece = this // get the current piece selected
+        currentCell = this.cellIndex; // get the current cell
+        console.log(currentPiece)
+        console.log(currentCell)
+        console.log(boardRep[x][y])
+        console.log(save_x, save_y)
+    } else if (boardRep[x][y] == " " || null) {
+        console.log('else statement triggered')
+        // else, you are moving a piece
+        x.innerHTML = currentPiece // Set the selected space to the piece that was grabbed
+        currentCell.innerHTML = " " // remove the piece from its old location
+        state = false // piece has been set so set state back to false
     }
-  } else if (boardRep[x][y] == " ") {
-    console.log('else statement triggered')
-    // else, you are moving a piece
-    x.innerHTML = currentPiece // Set the selected space to the piece that was grabbed
-    currentCell.innerHTML = " " // remove the piece from its old location
-    state = false // piece has been set so set state back to false
   }
-
-  */
-}
 
 
 // you would only want to removeEventListener if
