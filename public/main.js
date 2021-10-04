@@ -65,6 +65,7 @@ const board = document.getElementById('chessboard-container')
 const newBtn = document.querySelector('.new-game-btn')
 console.log(board, newBtn)
 const cells = document.querySelectorAll('td')
+const mvPawn = document.querySelector('.move-pawn-btn')
 
 // setting global variable for cell so that newGame function can provide ability to isolate cells with pieces
 const cell = ''
@@ -73,7 +74,7 @@ const cell = ''
 // document.querySelector('.tbody').style.height = ${window.size.height * 0.1}
 
 newBtn.addEventListener('click', newGame)
-
+mvPawn.addEventListener('click', getCell)
 
 // add event listener for when user clicks on a piece to movePiece
 // clickPiece()
@@ -89,17 +90,17 @@ function getCell(e) {
   // console.log(x)
   console.log(e)
 
-//  if (!state) { // if the state is false - when no piece is selected
-    if (boardRep[x][y] != " ") {
-        save_x = x
-        save_y = y
+  if (!state) { // if the state is false - when no piece is selected
+    // if (boardRep[x][y] != " ") {
+        // save_x = x
+        // save_y = y
         state = true; // a piece has been selected
-        currentPiece = this // get the current piece selected
+        currentPiece = this.innerHTML // get the current piece selected
         currentCell = this.cellIndex; // get the current cell
         console.log(currentPiece)
         console.log(currentCell)
         console.log(boardRep[x][y])
-        console.log(save_x, save_y)
+        // console.log(save_x, save_y)
     } else if (boardRep[x][y] == " " || null) {
         console.log('else statement triggered')
         // else, you are moving a piece
@@ -165,11 +166,11 @@ function createBoard(){
            blkChars.cells[i].innerHTML = blkMonarchs[i - 1].hex
            blkPawns.cells[i].innerHTML = blkPawn
 
-           whtPawns.cells[i].addEventListener('click', getCell)
-           whtChars.cells[i].addEventListener('click', getCell)
-
-           blkChars.cells[i].addEventListener('click', getCell)
-           blkPawns.cells[i].addEventListener('click', getCell)
+           // whtPawns.cells[i].addEventListener('click', getCell)
+           // whtChars.cells[i].addEventListener('click', getCell)
+           //
+           // blkChars.cells[i].addEventListener('click', getCell)
+           // blkPawns.cells[i].addEventListener('click', getCell)
 
            // allCells[index].addEventListener('click', getCell)
 
