@@ -90,8 +90,8 @@ function getCell(e) {
   // console.log(x)
   console.log(e)
 
-  if (!state) { // if the state is false - when no piece is selected
-    // if (boardRep[x][y] != " ") {
+//  if (!state) { // if the state is false - when no piece is selected
+    if (boardRep[x][y] != " ") {
         // save_x = x
         // save_y = y
         state = true; // a piece has been selected
@@ -166,11 +166,11 @@ function createBoard(){
            blkChars.cells[i].innerHTML = blkMonarchs[i - 1].hex
            blkPawns.cells[i].innerHTML = blkPawn
 
-           // whtPawns.cells[i].addEventListener('click', getCell)
-           // whtChars.cells[i].addEventListener('click', getCell)
-           //
-           // blkChars.cells[i].addEventListener('click', getCell)
-           // blkPawns.cells[i].addEventListener('click', getCell)
+           whtPawns.cells[i].addEventListener('click', getCell)
+           whtChars.cells[i].addEventListener('click', getCell)
+
+           blkChars.cells[i].addEventListener('click', getCell)
+           blkPawns.cells[i].addEventListener('click', getCell)
 
            // allCells[index].addEventListener('click', getCell)
 
