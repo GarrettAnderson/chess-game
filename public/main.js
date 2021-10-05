@@ -89,7 +89,7 @@ function getCell(e) {
   console.log(this) // 'this' will access the chess piece and the <td />
   // console.log(x)
   console.log(e)
-
+  console.log(boardRep[1][1])
 //  if (!state) { // if the state is false - when no piece is selected
     if (boardRep[x][y] != " ") {
         // save_x = x
@@ -147,7 +147,6 @@ function createBoard(){
     // let rowCells = []
     let remainingRows = []
     let remainingCells = []
-    console.log(allCells)
 
 
 // CREATE A VARIABLE TO CONTAIN THE REMAINING EMPTY CELLS ON THE BOARD
