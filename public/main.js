@@ -131,6 +131,7 @@ function createBoard(){
 
       for (let j = 1; j < 9; j++) {
         row.insertCell(j)
+        console.log(boardRep[i][j])
       }
     }
     console.log(table)
