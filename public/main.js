@@ -89,9 +89,9 @@ function getCell(e) {
   console.log(this) // 'this' will access the chess piece and the <td />
   // console.log(x)
   console.log(e)
-  console.log(boardRep[1][1])
-//  if (!state) { // if the state is false - when no piece is selected
-    if (boardRep[x][y] != " ") {
+  console.log(boardRep[0][0])
+  if (!state) { // if the state is false - when no piece is selected
+    // if (boardRep[x][y] != " ") {
         // save_x = x
         // save_y = y
         state = true; // a piece has been selected
