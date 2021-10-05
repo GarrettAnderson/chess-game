@@ -55,10 +55,11 @@ const blkMonarchs = [
 let state = false
 let currentPiece
 let currentCell
-let save_x = 0
-let save_y = 0
-let x = 0
-let y = 0
+let currentX
+let currentY
+let save_x
+let save_y
+
 
 const board = document.getElementById('chessboard-container')
 // const newBtn = document.getElementById('new-game-btn')
@@ -74,7 +75,7 @@ const cell = ''
 // document.querySelector('.tbody').style.height = ${window.size.height * 0.1}
 
 newBtn.addEventListener('click', newGame)
-mvPawn.addEventListener('click', getCell)
+// mvPawn.addEventListener('click', getCell)
 
 // add event listener for when user clicks on a piece to movePiece
 // clickPiece()
@@ -90,6 +91,7 @@ function getCell(e) {
   // console.log(x)
   console.log(e)
   console.log(boardRep[0][0])
+
   if (!state) { // if the state is false - when no piece is selected
     // if (boardRep[x][y] != " ") {
         // save_x = x
@@ -97,9 +99,14 @@ function getCell(e) {
         state = true; // a piece has been selected
         currentPiece = this.innerHTML // get the current piece selected
         currentCell = this.cellIndex; // get the current cell
+        currentRow = this;
         console.log(currentPiece)
         console.log(currentCell)
-        console.log(boardRep[x][y])
+        console.log(currentRow)
+
+        currentPiece = " "
+
+        // console.log(boardRep[x][y])
         // console.log(save_x, save_y)
     } else if (boardRep[x][y] == " " || null) {
         console.log('else statement triggered')
@@ -131,7 +138,6 @@ function createBoard(){
 
       for (let j = 1; j < 9; j++) {
         row.insertCell(j)
-        console.log(boardRep[i][j])
       }
     }
     console.log(table)
@@ -158,7 +164,7 @@ function createBoard(){
     for (let i = 1, row; i < allCells.length + 1; i ++) {
 
           let cellsPerRow = Array.from(allCells[i - 1].children)
-          console.log(cellsPerRow)
+          // console.log(cellsPerRow)
 
            whtPawns.cells[i].innerHTML = whitePawn
            whtChars.cells[i].innerHTML = whiteMonarchs[i - 1].hex
