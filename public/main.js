@@ -75,7 +75,7 @@ const cell = ''
 // document.querySelector('.tbody').style.height = ${window.size.height * 0.1}
 
 newBtn.addEventListener('click', newGame)
-// mvPawn.addEventListener('click', getCell)
+mvPawn.addEventListener('click', movePiece)
 
 // add event listener for when user clicks on a piece to movePiece
 // clickPiece()
@@ -84,6 +84,12 @@ newBtn.addEventListener('click', newGame)
 //   console.log('cell clicked!', e)
 //   getCell(e)
 // }
+
+
+function movePiece() {
+  console.log('move a piece')
+
+}
 
 
 function getCell(e) {
@@ -100,13 +106,13 @@ function getCell(e) {
         currentPiece = this.innerHTML // get the current piece selected
         currentX = this.cellIndex; // get the current cell
         currentRow = this;
-        // console.log(currentPiece)
-        // console.log(currentX)
-        // console.log(currentRow)
-        console.log(boardRep[1][currentX])
+        console.log(currentPiece)
+        console.log(currentX)
+        console.log(currentRow)
+        console.log(boardRep[0][currentX - 1])
         // console.log(boardRep[x][y])
         // console.log(save_x, save_y)
-    } else if (boardRep[x][y] == " " || null) {
+    } else if (boardRep[currentX][currentY] == " " || null) {
         console.log('else statement triggered')
         // else, you are moving a piece
         x.innerHTML = currentPiece // Set the selected space to the piece that was grabbed
@@ -170,11 +176,11 @@ function createBoard(){
            blkChars.cells[i].innerHTML = blkMonarchs[i - 1].hex
            blkPawns.cells[i].innerHTML = blkPawn
 
-           whtPawns.cells[i].addEventListener('click', getCell)
-           whtChars.cells[i].addEventListener('click', getCell)
-
-           blkChars.cells[i].addEventListener('click', getCell)
-           blkPawns.cells[i].addEventListener('click', getCell)
+           // whtPawns.cells[i].addEventListener('click', getCell)
+           // whtChars.cells[i].addEventListener('click', getCell)
+           //
+           // blkChars.cells[i].addEventListener('click', getCell)
+           // blkPawns.cells[i].addEventListener('click', getCell)
 
            // allCells[index].addEventListener('click', getCell)
 
