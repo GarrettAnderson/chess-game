@@ -98,12 +98,12 @@ function getCell(e) {
         // save_y = y
         state = true; // a piece has been selected
         currentPiece = this.innerHTML // get the current piece selected
-        currentY = this.cellIndex; // get the current cell
+        currentX = this.cellIndex; // get the current cell
         currentRow = this;
         // console.log(currentPiece)
         // console.log(currentX)
         // console.log(currentRow)
-        console.log(boardRep[1][currentY])
+        console.log(boardRep[1][currentX])
         // console.log(boardRep[x][y])
         // console.log(save_x, save_y)
     } else if (boardRep[x][y] == " " || null) {
