@@ -60,6 +60,7 @@ let blkChars
 let blkPawns
 
 let allCells
+let cellsPerRow
 // let rowCells = []
 let remainingRows = []
 let remainingCells = []
@@ -182,8 +183,8 @@ function createBoard(){
     for (let i = 1, row; i < allCells.length + 1; i ++) {
 
 
-          let cellsPerRow = Array.from(allCells[i - 1].children)
-          // console.log(cellsPerRow)
+          cellsPerRow = Array.from(allCells[i - 1].children)
+          console.log(cellsPerRow[i])
 
            whtPawns.cells[i].innerHTML = whitePawn
            whtChars.cells[i].innerHTML = whiteMonarchs[i - 1].hex
