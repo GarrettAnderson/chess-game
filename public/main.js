@@ -51,6 +51,21 @@ const blkMonarchs = [
   {rank: 'rook', hex: '&#9820;'}
 ]
 
+
+// Variables that were initially in the newGame function
+let whtChars
+let whtPawns
+
+let blkChars
+let blkPawns
+
+let allCells
+// let rowCells = []
+let remainingRows = []
+let remainingCells = []
+
+
+
 // Set state to indicate if a piece is selected
 let state = false
 let currentPiece
@@ -148,24 +163,24 @@ function createBoard(){
   }
 
   function newGame() {
-    let whtChars = document.querySelector('.table-body tr:first-child')
-    let whtPawns = document.querySelector('.table-body tr:nth-child(2)')
 
-    let blkChars = document.querySelector('.table-body tr:last-child')
-    let blkPawns = document.querySelector('.table-body tr:nth-child(7)')
+    whtChars = document.querySelector('.table-body tr:first-child')
+    whtPawns = document.querySelector('.table-body tr:nth-child(2)')
 
-    let allCells = [...document.querySelectorAll('.table-body tr')]
+    blkChars = document.querySelector('.table-body tr:last-child')
+    blkPawns = document.querySelector('.table-body tr:nth-child(7)')
+
+    allCells = [...document.querySelectorAll('.table-body tr')]
     // let rowCells = []
-    let remainingRows = []
-    let remainingCells = []
-
-
-// CREATE A VARIABLE TO CONTAIN THE REMAINING EMPTY CELLS ON THE BOARD
+    // CREATE A VARIABLE TO CONTAIN THE REMAINING EMPTY CELLS ON THE BOARD
+    remainingRows = []
+    remainingCells = []
 
     // pawnSqr.innerHTML = 'test'
     // console.log(whtChars)
 
     for (let i = 1, row; i < allCells.length + 1; i ++) {
+
 
           let cellsPerRow = Array.from(allCells[i - 1].children)
           // console.log(cellsPerRow)
