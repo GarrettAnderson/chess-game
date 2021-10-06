@@ -184,7 +184,7 @@ function createBoard(){
 
 
           cellsPerRow = Array.from(allCells[i - 1].children)
-          console.log(cellsPerRow[1])
+          // console.log(cellsPerRow[i])
           console.log(cellsPerRow[2])
           console.log(cellsPerRow[3])
           console.log(cellsPerRow[4])
