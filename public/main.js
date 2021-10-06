@@ -184,7 +184,15 @@ function createBoard(){
 
 
           cellsPerRow = Array.from(allCells[i - 1].children)
-          console.log(cellsPerRow[i])
+          console.log(cellsPerRow[1])
+          console.log(cellsPerRow[2])
+          console.log(cellsPerRow[3])
+          console.log(cellsPerRow[4])
+          console.log(cellsPerRow[5])
+          console.log(cellsPerRow[6])
+          console.log(cellsPerRow[7])
+          console.log(cellsPerRow[8])
+
 
            whtPawns.cells[i].innerHTML = whitePawn
            whtChars.cells[i].innerHTML = whiteMonarchs[i - 1].hex
