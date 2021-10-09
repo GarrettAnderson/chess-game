@@ -104,7 +104,9 @@ mvPawn.addEventListener('click', movePiece)
 
 function movePiece() {
   console.log('move a piece')
+  console.log(cellsPerRow[1].innerHTML)
 
+  cellsPerRow[1].innerHTML = " "
 }
 
 
@@ -112,7 +114,7 @@ function getCell(e) {
   console.log(this) // 'this' will access the chess piece and the <td />
   // console.log(x)
   console.log(e)
-  console.log(boardRep[0][0])
+  // console.log(cellsPerRow[8])
 
   if (!state) { // if the state is false - when no piece is selected
     // if (boardRep[x][y] != " ") {
@@ -125,10 +127,9 @@ function getCell(e) {
         console.log(currentPiece)
         console.log(currentX)
         console.log(currentRow)
-        console.log(boardRep[0][currentX - 1])
         // console.log(boardRep[x][y])
         // console.log(save_x, save_y)
-    } else if (boardRep[currentX][currentY] == " " || null) {
+    } else if (currentPiece == " " || null) {
         console.log('else statement triggered')
         // else, you are moving a piece
         x.innerHTML = currentPiece // Set the selected space to the piece that was grabbed
@@ -181,17 +182,19 @@ function createBoard(){
     // console.log(whtChars)
 
     for (let i = 1, row; i < allCells.length + 1; i ++) {
+    // for (let i = 0, row; i < allCells.length + 1; i ++) {
 
 
           cellsPerRow = Array.from(allCells[i - 1].children)
           // console.log(cellsPerRow[i])
-          console.log(cellsPerRow[2])
-          console.log(cellsPerRow[3])
-          console.log(cellsPerRow[4])
-          console.log(cellsPerRow[5])
-          console.log(cellsPerRow[6])
-          console.log(cellsPerRow[7])
-          console.log(cellsPerRow[8])
+          // console.log(cellsPerRow)
+          // console.log(cellsPerRow[2])
+          // console.log(cellsPerRow[3])
+          // console.log(cellsPerRow[4])
+          // console.log(cellsPerRow[5])
+          // console.log(cellsPerRow[6])
+          // console.log(cellsPerRow[7])
+          // console.log(cellsPerRow[8])
 
 
            whtPawns.cells[i].innerHTML = whitePawn
@@ -200,13 +203,14 @@ function createBoard(){
            blkChars.cells[i].innerHTML = blkMonarchs[i - 1].hex
            blkPawns.cells[i].innerHTML = blkPawn
 
-           // whtPawns.cells[i].addEventListener('click', getCell)
-           // whtChars.cells[i].addEventListener('click', getCell)
-           //
-           // blkChars.cells[i].addEventListener('click', getCell)
-           // blkPawns.cells[i].addEventListener('click', getCell)
+           whtPawns.cells[i].addEventListener('click', getCell)
+           whtChars.cells[i].addEventListener('click', getCell)
+
+           blkChars.cells[i].addEventListener('click', getCell)
+           blkPawns.cells[i].addEventListener('click', getCell)
 
            // allCells[index].addEventListener('click', getCell)
+           // cellsPerRow[i].addEventListener('click', getCell)
 
            // for (let j = 2, col; j < 6; j++) {
            //
