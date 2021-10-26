@@ -188,13 +188,17 @@ function createBoard(){
           cellsPerRow = Array.from(allCells[i - 1].children)
 
           console.log(cellsPerRow)
-          console.log(...cellsPerRow[2].children)
           // console.log(cellsPerRow[3])
           // console.log(cellsPerRow[4])
           // console.log(cellsPerRow[5])
           // console.log(cellsPerRow[6])
           // console.log(cellsPerRow[7])
           // console.log(cellsPerRow[8])
+
+          cellsPerRow.forEach(cell => {
+            console.log(cell)
+            cell.addEventListener('click', getCell)
+          })
 
 
            whtPawns.cells[i].innerHTML = whitePawn
@@ -208,6 +212,7 @@ function createBoard(){
 
            blkChars.cells[i].addEventListener('click', getCell)
            blkPawns.cells[i].addEventListener('click', getCell)
+
 
            // cellsPerRow[4].addEventListener('click', getCell)
 
