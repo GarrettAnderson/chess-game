@@ -186,9 +186,9 @@ function createBoard(){
 
 
           cellsPerRow = Array.from(allCells[i - 1].children)
-          // console.log(cellsPerRow[i])
-          // console.log(cellsPerRow)
-          // console.log(cellsPerRow[2])
+
+          console.log(cellsPerRow)
+          console.log(...cellsPerRow[2].children)
           // console.log(cellsPerRow[3])
           // console.log(cellsPerRow[4])
           // console.log(cellsPerRow[5])
@@ -208,6 +208,8 @@ function createBoard(){
 
            blkChars.cells[i].addEventListener('click', getCell)
            blkPawns.cells[i].addEventListener('click', getCell)
+
+           // cellsPerRow[4].addEventListener('click', getCell)
 
            // allCells[index].addEventListener('click', getCell)
            // cellsPerRow[i].addEventListener('click', getCell)
