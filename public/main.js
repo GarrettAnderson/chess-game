@@ -116,7 +116,7 @@ function getCell(e) {
   console.log(e)
   // console.log(cellsPerRow[8])
 
-  if (!state) { // if the state is false - when no piece is selected
+  if (state === false) { // if the state is false - when no piece is selected
     // if (boardRep[x][y] != " ") {
         // save_x = x
         // save_y = y
@@ -124,12 +124,15 @@ function getCell(e) {
         currentPiece = this.innerHTML // get the current piece selected
         currentX = this.cellIndex; // get the current cell
         currentRow = this;
+
+        currentRow.style.border = "3px solid limegreen"
+
         console.log(currentPiece)
         console.log(currentX)
         console.log(currentRow)
         // console.log(boardRep[x][y])
         // console.log(save_x, save_y)
-    } else if (currentPiece == " " || null) {
+    } else {
         console.log('else statement triggered')
         // else, you are moving a piece
         x.innerHTML = currentPiece // Set the selected space to the piece that was grabbed
@@ -139,13 +142,6 @@ function getCell(e) {
   }
 
 
-// you would only want to removeEventListener if
-// you were removing the button programmatically
-//
-// function cleanUp() {
-//   console.log('meow')
-//   newBtn.removeEventListener('click', newGame)
-// }
 
 function createBoard(){
   let table = document.getElementById('tbody')
@@ -195,11 +191,6 @@ function createBoard(){
           // console.log(cellsPerRow[7])
           // console.log(cellsPerRow[8])
 
-          cellsPerRow.forEach(cell => {
-            console.log(cell)
-            cell.addEventListener('click', getCell)
-          })
-
 
            whtPawns.cells[i].innerHTML = whitePawn
            whtChars.cells[i].innerHTML = whiteMonarchs[i - 1].hex
@@ -213,24 +204,11 @@ function createBoard(){
            blkChars.cells[i].addEventListener('click', getCell)
            blkPawns.cells[i].addEventListener('click', getCell)
 
-
-           // cellsPerRow[4].addEventListener('click', getCell)
-
-           // allCells[index].addEventListener('click', getCell)
-           // cellsPerRow[i].addEventListener('click', getCell)
-
-           // for (let j = 2, col; j < 6; j++) {
-           //
-           //     console.log(allCells[j])
-           //     remainingRows = allCells[j]
-           //     // remainingRows.push(allCells[j])
-           //     console.log(remainingRows)
-           // }
-
-           // for(let j = 0; j < cellsPerRow.length; j++) {
-           //   console.log(cellsPerRow[j])
-           // }
-
+           // ADD click event on each cell
+           cellsPerRow.forEach(cell => {
+             console.log(cell)
+             cell.addEventListener('click', getCell)
+           })
        }
     }
 
