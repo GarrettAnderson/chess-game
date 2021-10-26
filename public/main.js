@@ -135,10 +135,11 @@ function getCell(e) {
     } else {
         console.log('else statement triggered')
         // else, you are moving a piece
-        x.innerHTML = currentPiece // Set the selected space to the piece that was grabbed
+        this.innerHTML = currentPiece // Set the selected space to the piece that was grabbed
         currentCell.innerHTML = " " // remove the piece from its old location
         state = false // piece has been set so set state back to false
     }
+    e.stopPropagation()
   }
 
 
