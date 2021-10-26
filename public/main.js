@@ -111,25 +111,26 @@ function movePiece() {
 
 
 function getCell(e) {
+  console.log('state: ', state)
   console.log(this) // 'this' will access the chess piece and the <td />
   // console.log(x)
   console.log(e)
   // console.log(cellsPerRow[8])
 
-  if (state === false) { // if the state is false - when no piece is selected
+  if (!state) { // if the state is false - when no piece is selected
     // if (boardRep[x][y] != " ") {
         // save_x = x
         // save_y = y
         state = true; // a piece has been selected
         currentPiece = this.innerHTML // get the current piece selected
         currentX = this.cellIndex; // get the current cell
-        currentRow = this;
+        currentCell = this;
 
-        currentRow.style.border = "3px solid limegreen"
+        currentCell.style.border = "3px solid limegreen"
 
         console.log(currentPiece)
         console.log(currentX)
-        console.log(currentRow)
+        console.log(currentCell)
         // console.log(boardRep[x][y])
         // console.log(save_x, save_y)
     } else {
