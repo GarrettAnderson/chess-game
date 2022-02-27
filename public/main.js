@@ -214,6 +214,14 @@ function createBoard(){
        }
     }
 
+    function newGameStart () {
+      location.reload();
+      return false;
+    }
+
+    let newGameBtn = document.querySelector('.new-game-btn')
+    newGameBtn.addEventListener('click', newGameStart)
+
 
 
 
