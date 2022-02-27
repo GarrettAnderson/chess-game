@@ -2,11 +2,11 @@
 
 // CREATE BOARD WHEN VIEWPORT LOADS AND RELOADS
 window.onload = function() {
-  if (localStorage.getItem("hasCodeRunBefore") != null) {
+  // if (localStorage.getItem("hasCodeRunBefore") != null) {
     createBoard()
     newGame()
-    localStorage.setItem("hasCodeRunBefore", true)
-  }
+    // localStorage.setItem("hasCodeRunBefore", true)
+  // }
 }
 
 
@@ -149,7 +149,7 @@ function createBoard(){
   let table = document.getElementById('tbody')
   // console.log('Its beginning!' + table)
 
-  for (let i = 0; i < 8; i++) {
+  for (let i = 0; i <= 8; i++) {
       let row = table.insertRow(i)
       let firstCell = row.insertCell(0)
 
