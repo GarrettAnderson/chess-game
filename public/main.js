@@ -215,7 +215,7 @@ function createBoard(){
     }
 
     function newGameStart () {
-      location.reload();
+      window.location.reload();
       return false;
     }
 
